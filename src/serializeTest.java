@@ -49,7 +49,7 @@ public class serializeTest {
         p.setMeta(metaList);
 		
 		
-		Response res = given().log().all().header("Content-Type","application/json").header("Authorization", "FLWSECK-59e37422cb39042c1a2a1d3d8e0585aa-X")
+		Response res = given().log().all().header("Content-Type","application/json").header("Authorization", "")
 		.body(p)
 		.when().post("/v3/transfers")
 		.then().assertThat().statusCode(200).extract().response();
