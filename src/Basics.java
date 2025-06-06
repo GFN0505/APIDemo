@@ -19,7 +19,7 @@ public class Basics {
 		//when - resource,http method
 		//Then - validate the response
 		
-		
+		//Testing Git
 		//RestAssured.config = RestAssured.config().sslConfig(sslConfig().relaxedHTTPSValidation());
 		
 		//Add place
