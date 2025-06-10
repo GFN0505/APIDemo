@@ -1,6 +1,9 @@
 package pojo;
 
 public class GetCourses {
+	
+	//press option+command+S to get the option to create setters and getters
+	
 	private String instructor;
 	private String url;
 	private String services;
