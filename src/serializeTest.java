@@ -1,4 +1,5 @@
 import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import pojo.F4B;
 import pojo.Meta;
@@ -66,13 +67,31 @@ public class serializeTest {
         p.setMeta(metaList);
 		
 		
-		Response res = given().log().all().header("Content-Type","application/json").header("Authorization", "")
+		String res = given().log().all().header("Content-Type","application/json").header("Authorization", "FLWSECK-dc63611d01f0d12a05a67473ac618460-195afc6eddcvt-X")
 		.body(p)
 		.when().post("/v3/transfers")
-		.then().assertThat().statusCode(200).extract().response();
+		.then().assertThat().statusCode(200).extract().response().asString();
 		
-		String responseString = res.asString();
-		System.out.println(responseString);
+		
+		System.out.println(res);
+		
+		//To get the transfer ref from the response
+		JsonPath jsonpath = new JsonPath(res);
+		String transRef = jsonpath.getString("data.reference");
+		System.out.println(transRef);
+		
+		//To fetch actual transfers
+		String res2 = given().log().all().header("Content-Type","application/json").header("Authorization", "FLWSECK-dc63611d01f0d12a05a67473ac618460-195afc6eddcvt-X")
+				.queryParam("reference", transRef).queryParam("include_debit_currency_amount", "true").queryParam("include_rate", "true")
+				.when().log().all()
+				.get("/v3/transfers")
+				.then().extract().response().asString();
+		
+		System.out.println(res2);
+		
+		
+		
+		
 
 	}
 
