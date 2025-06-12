@@ -11,6 +11,7 @@ public class F4B {
 	private String reference;
 	private String currency;
 	private String beneficiary_name;
+	private String debit_currency;
 	private List<Meta>   meta;
 	
 	public String getAccount_number() {
@@ -54,6 +55,13 @@ public class F4B {
 	}
 	public void setBeneficiary_name(String beneficiary_name) {
 		this.beneficiary_name = beneficiary_name;
+	}
+	public String getDebit_currency() {
+		return debit_currency;
+	}
+	
+	public void setDebit_currency(String debit_currency) {
+		this.debit_currency = debit_currency;
 	}
 	public List<Meta> getMeta() {
 		return meta;

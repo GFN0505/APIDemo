@@ -19,27 +19,44 @@ public class serializeTest {
 		Random random = new Random();
 		
 		F4B p = new F4B();
-		p.setAccount_number("100035129997");
-		p.setAccount_bank("CIB");
+		p.setAccount_number("1234567890");
+		p.setAccount_bank("30");
 		p.setAmount(random.nextInt(900));
-		p.setNarration("Test");
+		p.setNarration("AutomationTest");
 		p.setReference("testRef "+random.nextInt(900));
-		p.setCurrency("EGP");
-		p.setBeneficiary_name("Flutterwave Test");
+		p.setCurrency("RWF");
+		p.setBeneficiary_name("Jane Doe");
+		p.setDebit_currency("NGN");
 		
 		// Create and set the meta data
         Meta meta = new Meta();
-        meta.setSender("Cornelius");
-        meta.setSender_id_expiry("2025-12-31");
-        meta.setSender_id_number("123454");
-        meta.setSender_date_of_birth("1990-01-01");
-        meta.setSender_id_type("01");
-        meta.setSender_city("naija");
-        meta.setBeneficiary_address("123 mawin street");
-        meta.setBeneficiary_id_number("ID5467833322222");
-        meta.setIs_cash_pickup(false);
-        meta.setTransfer_purpose("EPFAMT");
-        meta.setRoutecode("");
+       
+        meta.setBeneficiaryCountry("RW");
+        meta.setAccountNumber("1234567890");
+        meta.setFirstName("Jane");
+        meta.setLastName("Doe");
+        meta.setAddress("Kigali-Gatuna Rd, Kigali, Rwanda");
+        meta.setBankName("ACCESS RWANDA");
+        meta.setMobileNumber("25012345678");
+        meta.setRoutingNumber("30");
+        meta.setSender("Godsfavour Nwoko");
+        meta.setSenderCountry("NG");
+        meta.setBeneficiaryName("Jane Doe");
+        meta.setSenderIdNumber("2345645");
+        meta.setSenderIdType("01");
+        meta.setSenderIdExpiry("2032-02-06");
+        meta.setSenderCity("Lagos");
+        meta.setBeneficiaryIdNumber("123456y5434");
+        meta.setBeneficiaryAddress("Kigali-Gatuna Rd, Kigali, Rwanda");
+        meta.setBeneficiaryMobileNumber("25012345678");
+        meta.setSenderDateOfBirth("2006-02-22");
+        meta.setBeneficiaryIdType("01"); 
+        meta.setBeneficiaryIdExpiry("2029-02-16");
+        meta.setBeneficiaryDob("2007-12-31");
+        meta.setSenderGender("m");
+        meta.setDebitCurrencyAmount("12.39");
+        
+        
         
         // Add the meta object to a list
         List<Meta> metaList = new ArrayList<>();

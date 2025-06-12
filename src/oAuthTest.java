@@ -21,7 +21,7 @@ public class oAuthTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		String[] courseTitles = {"Selenium Webdriver Java", "Cypress", "Protractor"};
+		String[] courseTitles = {"Selenium Webdriver Java", "Cypress", "Protractor"}; // This is for the last block of code for assertion
 		
 		
 		String response = given()
@@ -47,6 +47,8 @@ public class oAuthTest {
 		System.out.println(gc.getInstructor());
 		System.out.println(gc.getCourses().getApi().get(1).getCourseTitle());
 		
+		
+		//Get price of APi course called SoapUI Webservices testing
 		List<Api> apiCourses = gc.getCourses().getApi();
 		for(int i=0; i<apiCourses.size();i++)
 		{
