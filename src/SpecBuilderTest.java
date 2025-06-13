@@ -69,13 +69,13 @@ public class SpecBuilderTest {
         p.setMeta(metaList);
         
 		
-        RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://f4b-v3-dashboard-staging-api.sandbox-flutterwave.com").addHeader("Authorization", "")
+        RequestSpecification req = new RequestSpecBuilder().setBaseUri("https://f4b-v3-dashboard-staging-api.sandbox-flutterwave.com").addHeader("Authorization", "FLWSECK-dc63611d01f0d12a05a67473ac618460-195afc6eddcvt-X")
         .setContentType(ContentType.JSON).build();
         
         ResponseSpecification resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
         
         
-		
+		//Actual requests
 		RequestSpecification res = given().spec(req)
 		.body(p); 
 		
